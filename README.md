@@ -113,9 +113,5 @@ curl -i http://127.0.0.1:8081/
 * Webhook delivered but no build: check trigger, URL, branch, and recent delivery.
 * Health check fails: inspect container logs, port mapping, and endpoint.
 
-## Interview explanation
 
-"I created a declarative Jenkins pipeline for a Python Flask application. A GitHub webhook triggers Jenkins on every push. Jenkins checks out the code, runs pytest unit tests, builds a versioned Docker image, smoke-tests the container, and pushes it to Docker Hub using credentials stored in Jenkins. It then deploys the image on EC2, checks the health endpoint, and attempts to restore the previous image if the new deployment fails its health check. I also tested a failing unit test to confirm a bad change is stopped before deployment."
-
-Only claim steps you personally ran and verified. For production, add separate build/deployment permissions, HTTPS, image scanning, retention policy, and a thoroughly tested rollback strategy.
 
